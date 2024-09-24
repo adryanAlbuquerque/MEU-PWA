@@ -1,8 +1,21 @@
 {
-  "name": "Gatinhos Filhotes PWA",
+  "name": "Fotos de Gatinhos Filhotes",
   "short_name": "Gatinhos",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#ff6699"
+  "theme_color": "#ffffff",
+  "description": "Um aplicativo para ver fotos de gatinhos filhotes.",
+  "icons": [
+    {
+      "src": "icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
