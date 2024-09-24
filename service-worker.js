@@ -1,14 +1,19 @@
-self.addEventListener('install', function (event) {
+self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open('v1').then(function (cache) {
-      return cache.addAll(['/', '/index.html']);
+    caches.open('sweet-form-cache').then((cache) => {
+      return cache.addAll([
+        '/',
+        '/index.html',
+        '/styles.css',
+        '/images/icon.png',
+      ]);
     }),
   );
 });
 
-self.addEventListener('fetch', function (event) {
+self.addEventListener('fetch', (event) => {
   event.respondWith(
-    caches.match(event.request).then(function (response) {
+    caches.match(event.request).then((response) => {
       return response || fetch(event.request);
     }),
   );
