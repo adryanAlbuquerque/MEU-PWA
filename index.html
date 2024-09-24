@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fotos de Gatinhos Filhotes</title>
+  <link rel="manifest" href="manifest.json">
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Fotos de Gatinhos Filhotes</h1>
+  <img id="catImage" src="https://placekitten.com/300/300" alt="Gatinho">
+  <br>
+  <button id="newCatButton">Ver outro gatinho</button>
+
+  <script>
+    // Função para buscar uma nova foto de gatinho
+    function fetchCatImage() {
+      fetch('https://api.thecatapi.com/v1/images/search')
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('catImage').src = data[0].url;
+        })
+        .catch(error => {
+          console.error('Erro ao buscar imagem de gatinho:', error);
+        });
+    }
+
+    // Quando o botão for clicado, muda a imagem
+    document.getElementById('newCatButton').addEventListener('click', fetchCatImage);
+
+    // Registrar o Service Worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(() => console.log('Service Worker registrado com sucesso'))
+        .catch(error => console.error('Falha ao registrar o Service Worker:', error));
+    }
+  </script>
+</body>
+
+</html>
