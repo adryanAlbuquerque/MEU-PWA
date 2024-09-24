@@ -26,6 +26,11 @@
       margin-top: 20px;
       cursor: pointer;
     }
+
+    a {
+      display: block;
+      margin: 10px 0;
+    }
   </style>
 </head>
 
@@ -34,6 +39,17 @@
   <img id="catImage" src="https://placekitten.com/300/300" alt="Gatinho">
   <br>
   <button id="newCatButton">Ver outro gatinho</button>
+
+  <!-- Links para e-mail, contato, endereço, SMS -->
+  <h2>Contato</h2>
+  <a href="mailto:exemplo@email.com">Enviar um E-mail</a>
+  <a href="tel:+5511999999999">Ligar para o Contato</a>
+  <a href="sms:+5511999999999">Enviar SMS</a>
+  <a href="https://www.google.com/maps?q=Endereço+exemplo" target="_blank">Ver no Mapa</a>
+
+  <!-- Exemplo de um iframe -->
+  <h2>Veja o Video de Gatinhos</h2>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
 
   <script>
     // Função para buscar uma nova foto de gatinho
